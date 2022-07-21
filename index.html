@@ -15,7 +15,133 @@
   </head>
   <body>
     <div class="container">
-      <h1>Weather app</h1>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-7">
+          <div
+            class="card"
+            id="maincard"
+          >
+            <h1>Boston</h1>
+            <form id="seaching"> 
+              <div class="input-group">
+                 <input type="text" class="form-control" placeholder="Enter a city" id="city"/>
+                 <button 
+                  type="button" 
+                  class="btn btn-outline-secondary" 
+                  style="
+                    color: #ffffff;
+                    border: 1px solid #ffffff; 
+                    font-weight: bold; 
+                    font-size: x-large;" 
+                  id="btn-seach">
+                   Seach
+                 </button>
+                 <button 
+                  type="button" 
+                  class="btn btn-outline-secondary"  style="
+                    color: #ffffff;
+                    border: 1px solid #ffffff; 
+                    font-weight: bold; 
+                    font-size: x-large;"
+                  id="btn-current">
+                    Current
+                  </button>
+               </div>
+              </form>
+              <br />
+            <div class="row">
+              <div class="col">
+                <h2>
+                  ☀️
+                  <br />
+                  Sunny
+                </h2>
+              </div>
+              <div class="col">
+                <h2>
+                  25
+                <span
+                 class="units"
+                 style="letter-spacing: -2px"
+                
+                 >
+                 <a href="#" id="celsius">°C</a>
+                 |
+                 <a href="#" id="farengeit">°F</a>
+                </span>
+                </h2>
+              </div>
+               <div class="col">
+                <div class="currentdate" id="currentdate">Date and time</div>
+                <div clas="currenthum" id="currenthum">Humidity: 46%</div>
+                <div class="currentwind" id="currentwind">Wind: 1 km/h</div>
+               </div>
+            </div>
+            <br/>
+            <h2>Today Hourly Forecast</h2>
+            <hr class="hr" />
+            <div class="row">
+              <div class="col">
+                <div>19:00</div>
+                 <div>☀️</div>
+                <div>26°</div>
+              </div>
+              <div class="col">
+                <div>20:00</div>
+                 <div>☀️</div>
+                <div>26°</div>
+              </div>
+              <div class="col">
+                <div>21:00</div>
+                 <div>☀️</div>
+                <div>26°</div>
+              </div>
+              <div class="col">
+                <div>22:00</div>
+                 <div>☀️</div>
+                <div>26°</div>
+              </div>
+              <div class="col">
+                <div>23:00</div>
+                 <div>☀️</div>
+                <div>26°</div>
+              </div>
+              <div class="col">
+                <div>24:00</div>
+                 <div>☀️</div>
+                <div>26°</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div
+            class="card"
+            id="forecastcard"
+          >
+          <h2>Daily Forecast</h2>
+        
+          
+          </div>
+          <div class="card" id="forecastone">
+            Friday Jul 7 ☀️ 26°18°
+          </div>
+          <div class="card" id="forecasttwo">
+            Saturday Jul 8 ☀️ 26°18°
+          </div>
+          <div class="card" id="forecastthree">
+            Sunday Jul 9 ☀️ 26°18°
+          </div>
+          <div class="card" id="forecastfour">
+            Monday Jul 10 ☀️ 26°18°
+          </div>
+          <div class="card" id="forecastfive">
+            Tuesday Jul 11 ☀️ 26°18°
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>

@@ -8,3 +8,76 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+h1 {
+  text-align: left;
+}
+.container {
+  text-align: center;
+  color: #282f36;
+}
+.hr {
+  color: #ffffff;
+  opacity: 1;
+}
+.card {
+  margin: 15px;
+  padding: 20px;
+  box-shadow: 0 30px 50px rgb(116 141 166 / 56%);
+}
+.units {
+  font-size: 1.3rem;
+  position: relative;
+  top: -22px;
+}
+#celsius {
+  text-decoration: none;
+}
+#celsius:hover {
+  text-decoration: underline;
+}
+#farengeit {
+  text-decoration: none;
+}
+#farengeit:hover {
+  text-decoration: underline;
+}
+#btn-seach:hover {
+  color: #ffffff;
+}
+#maincard {
+  background-color: rgb(222, 212, 115, 0.8);
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+  margin-top: 40px;
+}
+#forecastcard {
+  background-color: rgb(108, 117, 125, 0.8);
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+  margin-top: 40px;
+}
+#forecastone {
+  background-color: rgb(222, 212, 115, 0.8);
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+}
+#forecasttwo {
+  background-color: rgb(116, 141, 166, 0.8);
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+}
+#forecastthree {
+  background-color: rgb(200, 232, 237, 0.5);
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+}
+#forecastfour {
+  background-color: rgb(209, 209, 209, 0.8);
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+}
+#forecastfive {
+  background-color: rgb(247, 253, 177, 0.8);
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+}

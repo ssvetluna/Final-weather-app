@@ -21,6 +21,7 @@ h3 {
 .container {
   text-align: center;
   color: #282f36;
+  font-family: arial, sans-serif;
 }
 .hr {
   color: #ffffff;
@@ -35,6 +36,7 @@ h3 {
   font-size: 1.3rem;
   position: relative;
   top: -39px;
+  left: -13px;
 }
 .main-temp {
   font-size: 4.1rem;

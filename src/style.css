@@ -36,16 +36,17 @@ h3 {
   font-size: 1.3rem;
   position: relative;
   top: -39px;
+  left: -88px;
 }
 .main-temp {
   font-size: 4.1rem;
   position: relative;
-  left: 8px;
+  left: -86px;
 }
 .main-emoji {
-  font-size: 6.1rem;
+  width: 135px;
   position: relative;
-  top: -26px;
+  top: -20px;
 }
 .current {
   font-size: 1.2rem;

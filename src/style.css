@@ -48,6 +48,7 @@ h3 {
 }
 .current {
   font-size: 1.4rem;
+  text-align: left;
 }
 #celsius {
   text-decoration: none;

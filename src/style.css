@@ -8,9 +8,16 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-h1 {
+
+h1,
+h3 {
   text-align: left;
 }
+h3 {
+  position: relative;
+  top: 14px;
+}
+
 .container {
   text-align: center;
   color: #282f36;
@@ -20,23 +27,39 @@ h1 {
   opacity: 1;
 }
 .card {
-  margin: 15px;
+  margin: 16px;
   padding: 20px;
   box-shadow: 0 30px 50px rgb(116 141 166 / 56%);
 }
 .units {
   font-size: 1.3rem;
   position: relative;
-  top: -22px;
+  top: -39px;
+}
+.main-temp {
+  font-size: 4.1rem;
+}
+.main-emoji {
+  font-size: 6.1rem;
+  position: relative;
+  top: -26px;
+}
+.current {
+  font-size: 1.4rem;
+}
+#city {
+  font-weight: 700;
 }
 #celsius {
   text-decoration: none;
+  color: #ffffff;
 }
 #celsius:hover {
   text-decoration: underline;
 }
 #farengeit {
   text-decoration: none;
+  color: #ffffff;
 }
 #farengeit:hover {
   text-decoration: underline;
@@ -85,4 +108,5 @@ h1 {
   font-size: bold;
   text-decoration: none;
   text-align: left;
+  color: #ffffff;
 }

@@ -22,7 +22,7 @@
             class="card"
             id="maincard"
           >
-            <h1>Boston</h1>
+            <h1 id="city">Boston</h1>
             <form id="seaching"> 
               <div class="input-group">
                  <input type="text" class="form-control" placeholder="Enter a city" id="city"/>
@@ -50,16 +50,16 @@
                </div>
               </form>
               <br />
+              <br />
             <div class="row">
               <div class="col">
-                <h2>
-                  ☀️
-                  <br />
-                  Sunny
-                </h2>
+                <div class="main-emoji">
+                ☀️
+                </div>
+              
               </div>
               <div class="col">
-                <h2>
+                <div class="main-temp">
                   25
                 <span
                  class="units"
@@ -70,16 +70,16 @@
                  |
                  <a href="#" id="farengeit">°F</a>
                 </span>
-                </h2>
+              </div>
               </div>
                <div class="col">
-                <div class="currentdate" id="currentdate">Date and time</div>
-                <div clas="currenthum" id="currenthum">Humidity: 46%</div>
-                <div class="currentwind" id="currentwind">Wind: 1 km/h</div>
+                <div class="current" id="currentdate">Date and time</div>
+                <div class="current" id="currenthum">Humidity: 46%</div>
+                <div class="current" id="currentwind">Wind: 1 km/h</div>
                </div>
             </div>
-            <br/>
-            <h2>Today Hourly Forecast</h2>
+          
+            <h3>Today Hourly Forecast</h3>
             <hr class="hr" />
             <div class="row">
               <div class="col">
@@ -114,10 +114,11 @@
               </div>
             </div>
             <br />
-            
+            <br />
+            <br />
            <div> 
             <a
-        href="https://spontaneous-kelpie-51fad3.netlify.app"
+        href="https://github.com/ssvetluna/Final-weather-app.git"
         target="_blank"
         id="source"
              >
@@ -133,8 +134,6 @@
             id="forecastcard"
           >
           <h2>Daily Forecast</h2>
-        
-          
           </div>
           <div class="card" id="forecastone">
             Friday Jul 7 ☀️ 26°18°
@@ -151,11 +150,13 @@
           <div class="card" id="forecastfive">
             Tuesday Jul 11 ☀️ 26°18°
           </div>
+         <div class="card" id="forecastfive">
+            Wednesday Jul 12 ☀️ 26°18°
+          </div>
           </div>
         </div>
       </div>
-      <br />
-      
+     
     </div>
     <script src="src/index.js"></script>
   </body>

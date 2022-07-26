@@ -42,6 +42,7 @@ h3 {
   font-size: 4.1rem;
   position: relative;
   left: -86px;
+  color: #282f36;
 }
 .main-emoji {
   width: 135px;
@@ -55,19 +56,19 @@ h3 {
   top: -8px;
   left: 13px;
 }
-#celsius {
+.celsius {
+  text-decoration: none;
+  color: #282f36;
+}
+.celsius:hover {
+  color: #282f36;
+}
+.farengeit:hover {
+  color: #282f36;
+}
+.farengeit {
   text-decoration: none;
   color: #ffffff;
-}
-#celsius:hover {
-  text-decoration: underline;
-}
-#farengeit {
-  text-decoration: none;
-  color: #ffffff;
-}
-#farengeit:hover {
-  text-decoration: underline;
 }
 #btn-seach:hover {
   color: #ffffff;

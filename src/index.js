@@ -29,7 +29,8 @@ function dispalayTemperature(response) {
   let descriptionElement = response.data.weather[0].description;
   let dateElement = document.querySelector("#currentdate");
   let iconElement = document.querySelector(".main-emoji");
-  temperaturaElement.innerHTML = Math.round(response.data.main.temp);
+  mainTemp = Math.round(response.data.main.temp);
+  temperaturaElement.innerHTML = mainTemp;
   cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
@@ -44,6 +45,7 @@ function seach(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(dispalayTemperature);
 }
+let mainTemp = null;
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -52,3 +54,25 @@ function handleSubmit(event) {
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+seach("Kyiv");
+
+function farengeitConvert(event) {
+  event.preventDefault();
+  let tempFarengeit = document.querySelector("#main-temp");
+  tempFarengeit.innerHTML = Math.round((mainTemp * 9) / 5 + 32);
+  document.getElementsByClassName(`farengeit`)[0].style.color = "#282f36";
+  document.getElementsByClassName(`celsius`)[0].style.color = "#ffffff";
+}
+let farengeit = document.querySelector("#farengeit");
+farengeit.addEventListener("click", farengeitConvert);
+
+function celsiusConvert(event) {
+  event.preventDefault();
+  let tempCelsius = document.querySelector("#main-temp");
+  tempCelsius.innerHTML = Math.round(mainTemp);
+  document.getElementsByClassName(`celsius`)[0].style.color = "#282f36";
+  document.getElementsByClassName(`farengeit`)[0].style.color = "#ffffff";
+}
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", celsiusConvert);

@@ -76,6 +76,9 @@ h3 {
 #updated {
   color: #ffffff;
 }
+.card {
+  background-color: rgb(222, 212, 115, 0.8);
+}
 #maincard {
   background-color: rgb(222, 212, 115, 0.8);
   border-radius: 18px;

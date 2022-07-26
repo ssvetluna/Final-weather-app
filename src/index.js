@@ -21,7 +21,7 @@ function formatDate(timeStamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function dispalayTemperature(response) {
+function displayTemperature(response) {
   let temperaturaElement = document.querySelector(".main-temp");
   let cityElement = document.querySelector("#cityName");
   let humidityElement = document.querySelector("#currenthum");
@@ -43,9 +43,10 @@ function dispalayTemperature(response) {
 function seach(city) {
   let apiKey = "2f7f11cce544f115af9a2c80b2a612b4";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(dispalayTemperature);
+  axios.get(url).then(displayTemperature);
 }
 let mainTemp = null;
+seach("Kyiv");
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -54,8 +55,6 @@ function handleSubmit(event) {
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
-
-seach("Kyiv");
 
 function farengeitConvert(event) {
   event.preventDefault();
@@ -76,3 +75,18 @@ function celsiusConvert(event) {
 }
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", celsiusConvert);
+
+function retrievePosition(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(displayTemperature);
+}
+
+function showNavigation(relative) {
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+let currentCity = document.querySelector("#current");
+currentCity.addEventListener("click", showNavigation);

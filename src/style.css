@@ -91,31 +91,27 @@ h3 {
   border: 1px solid #ffffff;
   margin-top: 40px;
 }
-#forecastone {
+#forecastbase {
   background-color: rgb(222, 212, 115, 0.8);
   border-radius: 18px;
   border: 1px solid #ffffff;
+  display: inherit;
 }
-#forecasttwo {
-  background-color: rgb(116, 141, 166, 0.8);
-  border-radius: 18px;
-  border: 1px solid #ffffff;
+#forecast-image {
+  width: 32px;
 }
-#forecastthree {
-  background-color: rgb(200, 232, 237, 0.5);
-  border-radius: 18px;
-  border: 1px solid #ffffff;
+#forecast-time-image {
+  width: 46px;
 }
-#forecastfour {
-  background-color: rgb(209, 209, 209, 0.8);
-  border-radius: 18px;
-  border: 1px solid #ffffff;
+
+.forecast-temp-max,
+.weater-forecast-time-temp {
+  font-weight: bold;
 }
-#forecastfive {
-  background-color: rgb(247, 253, 177, 0.8);
-  border-radius: 18px;
-  border: 1px solid #ffffff;
+.forecast-temp-min {
+  opacity: 0.7;
 }
+
 #source {
   font-size: bold;
   text-decoration: none;

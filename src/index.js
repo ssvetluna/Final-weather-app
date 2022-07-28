@@ -27,8 +27,6 @@ function changeWeatherBackground(descriptionElement) {
     descriptionElement === "clear sky" ||
     descriptionElement === "few clouds"
   ) {
-    document.getElementsByClassName(`card`)[0].style.background =
-      "rgb(222, 212, 115, 0.8)";
     forecastColor = "rgb(222, 212, 115, 0.8)";
   } else {
     if (
@@ -36,15 +34,34 @@ function changeWeatherBackground(descriptionElement) {
       descriptionElement === "broken clouds" ||
       descriptionElement === "moderate rain"
     ) {
-      document.getElementsByClassName(`card`)[0].style.background = "#DEDEDE";
       forecastColor = "#DEDEDE";
     } else {
-      document.getElementsByClassName(`card`)[0].style.background =
-        "rgb(116, 141, 166, 0.8)";
       forecastColor = "rgb(116, 141, 166, 0.8)";
     }
   }
   return forecastColor;
+}
+function changeWeatherBackgroundMainCard(descriptionElement) {
+  let forecastColor = "";
+  if (
+    descriptionElement === "light rain" ||
+    descriptionElement === "clear sky" ||
+    descriptionElement === "few clouds"
+  ) {
+    document.getElementsByClassName(`card`)[0].style.background =
+      "rgb(222, 212, 115, 0.8)";
+  } else {
+    if (
+      descriptionElement === "scattered clouds" ||
+      descriptionElement === "broken clouds" ||
+      descriptionElement === "moderate rain"
+    ) {
+      document.getElementsByClassName(`card`)[0].style.background = "#DEDEDE";
+    } else {
+      document.getElementsByClassName(`card`)[0].style.background =
+        "rgb(116, 141, 166, 0.8)";
+    }
+  }
 }
 
 function getForecast(coordinates) {
@@ -62,7 +79,7 @@ function displayTemperature(response) {
   let descriptionElement = response.data.weather[0].description;
   let dateElement = document.querySelector("#currentdate");
   let iconElement = document.querySelector(".main-emoji");
-  changeWeatherBackground(descriptionElement);
+  changeWeatherBackgroundMainCard(descriptionElement);
   mainTemp = Math.round(response.data.main.temp);
   temperaturaElement.innerHTML = mainTemp;
   cityElement.innerHTML = response.data.name;

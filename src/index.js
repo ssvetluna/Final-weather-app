@@ -21,6 +21,7 @@ function formatDate(timeStamp) {
   return `${day} ${hours}:${minutes}`;
 }
 function changeWeatherBackground(descriptionElement) {
+  let forecastColor = "";
   if (
     descriptionElement === "light rain" ||
     descriptionElement === "clear sky" ||
@@ -28,17 +29,22 @@ function changeWeatherBackground(descriptionElement) {
   ) {
     document.getElementsByClassName(`card`)[0].style.background =
       "rgb(222, 212, 115, 0.8)";
+    forecastColor = "rgb(222, 212, 115, 0.8)";
   } else {
     if (
       descriptionElement === "scattered clouds" ||
-      descriptionElement === "broken clouds"
+      descriptionElement === "broken clouds" ||
+      descriptionElement === "moderate rain"
     ) {
       document.getElementsByClassName(`card`)[0].style.background = "#DEDEDE";
+      forecastColor = "#DEDEDE";
     } else {
       document.getElementsByClassName(`card`)[0].style.background =
         "rgb(116, 141, 166, 0.8)";
+      forecastColor = "rgb(116, 141, 166, 0.8)";
     }
   }
+  return forecastColor;
 }
 
 function getForecast(coordinates) {
@@ -176,7 +182,9 @@ function displayForecastDays(response) {
       forecastHTMLDays =
         forecastHTMLDays +
         `
-    <div class="card" id="forecastbase">
+    <div class="card" id="forecastbase" style="background-color: ${changeWeatherBackground(
+      forecastDays.weather[0].description
+    )}">
         <span class="weater-forecast-date">${days[dateForecast.getDay()]}  ${
           month[dateForecast.getMonth()]
         } ${dateForecast.getDate()}</span>

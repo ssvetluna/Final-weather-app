@@ -43,7 +43,7 @@ function changeWeatherBackground(descriptionElement) {
 
 function getForecast(coordinates) {
   let apiKey = "2f7f11cce544f115af9a2c80b2a612b4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecastDays);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -63,12 +63,11 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  console.log(response.data.weather);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  getForecast(response.data.cord);
+  getForecast(response.data.coord);
 }
 function seach(city) {
   let apiKey = "2f7f11cce544f115af9a2c80b2a612b4";
@@ -122,6 +121,7 @@ let currentCity = document.querySelector("#current");
 currentCity.addEventListener("click", showNavigation);
 
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["1", "2", "3", "4", "5", "6"];
@@ -144,6 +144,7 @@ function displayForecast(response) {
 }
 
 function displayForecastDays(response) {
+  console.log(response.data.daily);
   let forecastElementDays = document.querySelector("#forecastdays");
   let forecastHTMLDays = "";
   let days = ["1", "2", "3", "4", "5", "6"];
@@ -164,5 +165,3 @@ function displayForecastDays(response) {
   });
   forecastElementDays.innerHTML = forecastHTMLDays;
 }
-displayForecast();
-displayForecastDays();

@@ -68,7 +68,8 @@ function getForecast(coordinates) {
   let apiKey = "2f7f11cce544f115af9a2c80b2a612b4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecastDays);
-  axios.get(apiUrl).then(displayForecast);
+  let apiUrlHourly = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlHourly).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -144,21 +145,29 @@ let currentCity = document.querySelector("#current");
 currentCity.addEventListener("click", showNavigation);
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["1", "2", "3", "4", "5", "6"];
-  days.forEach(function (day) {
+  let timeForecast = ["0", "1", "2", "3", "4", "5"];
+
+  timeForecast.forEach(function (day) {
+    let hours = new Date(response.data.list[day].dt * 1000).getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
     forecastHTML =
       forecastHTML +
       `
     <div class="col-2">
-        <div class="weater-forecast-time">19:00</div>
+        <div class="weater-forecast-time">${hours}:00</div>
         <image
-                src="http://openweathermap.org/img/wn/50d@2x.png"
+                src="http://openweathermap.org/img/wn/${
+                  response.data.list[day].weather[0].icon
+                }@2x.png"
                 id="forecast-time-image"
         ></image>
-        <div class="weater-forecast-time-temp">26°</div>
+        <div class="weater-forecast-time-temp">${Math.round(
+          response.data.list[day].main.temp
+        )}°</div>
     </div>
   `;
   });

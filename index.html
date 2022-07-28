@@ -87,41 +87,8 @@
             </div>
             <h3>Today Hourly Forecast</h3>
             <hr class="hr" />
-            <div class="row">
-              <div class="col">
-                <div class="weater-forecast-time">19:00</div>
-                <image
-                  src="http://openweathermap.org/img/wn/50d@2x.png"
-                  id="forecast-time-image"
-                ></image>
-                <div class="weater-forecast-time-temp">26°</div>
-              </div>
-              <div class="col">
-                <div>20:00</div>
-                <div>☀️</div>
-                <div>26°</div>
-              </div>
-              <div class="col">
-                <div>21:00</div>
-                <div>☀️</div>
-                <div>26°</div>
-              </div>
-              <div class="col">
-                <div>22:00</div>
-                <div>☀️</div>
-                <div>26°</div>
-              </div>
-              <div class="col">
-                <div>23:00</div>
-                <div>☀️</div>
-                <div>26°</div>
-              </div>
-              <div class="col">
-                <div>24:00</div>
-                <div>☀️</div>
-                <div>26°</div>
-              </div>
-            </div>
+            <div class="forecast" id="forecast"></div>
+            <br />
             <br />
             <br />
             <div>
@@ -140,20 +107,7 @@
           <div class="card" id="forecastcard">
             <h2>Daily Forecast</h2>
           </div>
-          <div class="card" id="forecastbase">
-            <span class="weater-forecast-date">Friday Jul 7</span>
-            <image
-              src="http://openweathermap.org/img/wn/50d@2x.png"
-              id="forecast-image"
-            ></image>
-            <span class="forecast-temp-max">26°</span>
-            <span class="forecast-temp-min">18°</span>
-          </div>
-          <div class="card" id="forecastbase">Saturday Jul 8 ☀️ 26°18°</div>
-          <div class="card" id="forecastbase">Sunday Jul 9 ☀️ 26°18°</div>
-          <div class="card" id="forecastbase">Monday Jul 10 ☀️ 26°18°</div>
-          <div class="card" id="forecastbase">Tuesday Jul 11 ☀️ 26°18°</div>
-          <div class="card" id="forecastbase">Wednesday Jul 12 ☀️ 26°18°</div>
+          <div class="forecastdays" id="forecastdays"></div>
         </div>
       </div>
     </div>

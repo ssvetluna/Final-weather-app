@@ -56,6 +56,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  console.log(response.data.weather);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -111,3 +112,49 @@ function showNavigation(relative) {
 
 let currentCity = document.querySelector("#current");
 currentCity.addEventListener("click", showNavigation);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["1", "2", "3", "4", "5", "6"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+        <div class="weater-forecast-time">19:00</div>
+        <image
+                src="http://openweathermap.org/img/wn/50d@2x.png"
+                id="forecast-time-image"
+        ></image>
+        <div class="weater-forecast-time-temp">26°</div>
+    </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function displayForecastDays() {
+  let forecastElementDays = document.querySelector("#forecastdays");
+  let forecastHTMLDays = "";
+  let days = ["1", "2", "3", "4", "5", "6"];
+  days.forEach(function (day) {
+    forecastHTMLDays =
+      forecastHTMLDays +
+      `
+    <div class="card" id="forecastbase">
+        <span class="weater-forecast-date">Friday Jul 7</span>
+        <image
+            src="http://openweathermap.org/img/wn/50d@2x.png"
+            id="forecast-image"
+        ></image>
+        <span class="forecast-temp-max">26°</span>
+        <span class="forecast-temp-min">18°</span>
+     </div>
+  `;
+  });
+  forecastElementDays.innerHTML = forecastHTMLDays;
+}
+displayForecast();
+displayForecastDays();

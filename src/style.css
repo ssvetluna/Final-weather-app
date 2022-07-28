@@ -80,22 +80,21 @@ h3 {
 .card {
   background-color: rgb(222, 212, 115, 0.8);
 }
-#maincard {
-  background-color: rgb(222, 212, 115, 0.8);
+#maincard,
+#forecastcard,
+#forecastbase {
   border-radius: 18px;
   border: 1px solid #ffffff;
+}
+#maincard {
   margin-top: 40px;
 }
 #forecastcard {
   background-color: rgb(108, 117, 125, 0.8);
-  border-radius: 18px;
-  border: 1px solid #ffffff;
   margin-top: 40px;
 }
 #forecastbase {
   background-color: rgb(222, 212, 115, 0.8);
-  border-radius: 18px;
-  border: 1px solid #ffffff;
   display: inherit;
 }
 

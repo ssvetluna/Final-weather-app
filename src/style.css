@@ -78,6 +78,7 @@ h3 {
 }
 .card {
   background-color: rgb(222, 212, 115, 0.8);
+  padding: 20px 15px;
 }
 #maincard,
 #forecastcard,
